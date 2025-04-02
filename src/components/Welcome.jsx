@@ -1,12 +1,15 @@
 import React from 'react';
-import { Alert, Container } from 'react-bootstrap';
+import { Container, Nav, Navbar, Alert, Card, Row, Col } from "react-bootstrap";
 
 const Welcome = () => (
-  <Container className="my-4">
-    <Alert variant="info">
-      <h1>Benvenuto su EpiBooks!</h1>
-      <p>Il tuo negozio di libri di fiducia.</p>
+  <Container className="mt-4 text-center">
+    <Alert variant="primary">
+      <h1>Welcome to EpiBooks!</h1>
+      <p>Find your next great read here.</p>
     </Alert>
+    <Alert variant='danger'>
+          <h2>Limited Stock!</h2>
+        </Alert>
   </Container>
 );
 
