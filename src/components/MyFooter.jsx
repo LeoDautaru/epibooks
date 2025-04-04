@@ -1,9 +1,9 @@
-import React from 'react';
-
 const MyFooter = () => (
-  <footer className="text-center p-3 mt-4 bg-dark text-light">
-    <p>&copy; 2025 EpiBooks. All rights reserved.</p>
+  <footer className="d-flex bg-dark mt-2">
+    <span className="text-white m-auto p-2">
+      <strong>EPICODE</strong> - Copyright {new Date().getFullYear()}
+    </span>
   </footer>
-);
+)
 
-export default MyFooter;
+export default MyFooter

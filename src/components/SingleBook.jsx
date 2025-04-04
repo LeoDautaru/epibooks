@@ -1,15 +1,30 @@
-import React from "react";
-import { Card, Col } from "react-bootstrap";
+import { Component } from 'react'
+import { Card } from 'react-bootstrap'
+import CommentArea from './CommentArea'
 
-const SingleBook = ({ book }) => (
-  <Col xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={book.img} alt={book.title} />
-      <Card.Body>
-        <Card.Title>{book.title}</Card.Title>
-      </Card.Body>
-    </Card>
-  </Col>
-);
+class SingleBook extends Component {
+  state = {
+    selected: false,
+  }
 
-export default SingleBook;
+  render() {
+    return (
+      <>
+        <Card
+          onClick={() => this.setState({ selected: !this.state.selected })}
+          style={{ border: this.state.selected ? '3px solid red' : 'none' }}
+        >
+          <Card.Img variant="top" src={this.props.book.img} />
+          <Card.Body>
+            <Card.Title style={{ color: 'black' }}>
+              {this.props.book.title}
+            </Card.Title>
+          </Card.Body>
+        </Card>
+        {this.state.selected && <CommentArea asin={this.props.book.asin} />}
+      </>
+    )
+  }
+}
+
+export default SingleBook

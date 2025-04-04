@@ -1,17 +1,26 @@
-import React from "react";
-import MyNav from "./components/MyNav";
-import Welcome from "./components/Welcome";
-import BookList from "./components/BooKList";
-import MyFooter from "./components/MyFooter";
-import books from "./data/fantasy.json";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import MyNav from './components/MyNav'
+import MyFooter from './components/MyFooter'
+import Welcome from './components/Welcome'
+// import AllTheBooks from './components/AllTheBooks'
+import { Container } from 'react-bootstrap'
+import BookList from './components/BookList'
 
-const App = () => (
-  <>
-    <MyNav />
-    <Welcome />
-    <BookList books={books} />
-    <MyFooter />
-  </>
-);
+import fantasy from './data/fantasy.json'
 
-export default App;
+function App() {
+  return (
+    <>
+      <MyNav />
+      <Container>
+        <Welcome />
+        {/* <AllTheBooks /> */}
+        <BookList books={fantasy} />
+      </Container>
+      <MyFooter />
+    </>
+  )
+}
+
+export default App
